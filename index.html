@@ -88,13 +88,13 @@ footer p{margin:0 0 24px;max-width:32em;color:var(--mut)}
 <header class="hero">
   <div>
     <h1 aria-label="Rodrigo Tabarez"><span id="nm" aria-hidden="true">Rodrigo Tabarez</span></h1>
-    <p class="role"><span id="rl">Desenvolvedor RPA</span></p>
+    <p class="role"><span id="rl">Desenvolvedor de Automação e Integrações</span></p>
     <p class="lede">Mais de 4 anos transformando processos manuais em fluxos que rodam sozinhos, com UiPath, Python, APIs, bancos de dados e IA aplicada. Busco atuar em TI corporativa, com foco em sistemas, integrações e automação.</p>
     <div class="cta">
       <a class="btn p" href="mailto:tabarez.rodrigo@outlook.com">Enviar e-mail</a>
       <a class="btn" href="https://www.linkedin.com/in/tabarez-rodrigo/" target="_blank" rel="noopener">Ver LinkedIn</a>
     </div>
-    <ul class="facts"><li>Natal/RN</li><li>Graduando em Ciência da Computação</li><li>Inglês avançado</li></ul>
+    <ul class="facts"><li>Porto Alegre/RS</li><li>Graduando em Ciência da Computação</li><li>Inglês avançado</li></ul>
   </div>
   <div class="term">
     <div class="tb">execucao.log</div>
@@ -108,25 +108,24 @@ footer p{margin:0 0 24px;max-width:32em;color:var(--mut)}
 <section>
   <h2>Experiência</h2>
   <div class="tl" id="tl">
-
-    <article class="job">
-      <h3>Estagiário em Desenvolvimento RPA, Sicredi</h3>
-      <p class="when">2021 a 2022</p>
-      <ul><li>Desenvolvi automações em UiPath e participei de projetos de inovação desde o início do estágio.</li></ul>
-      <span class="badge">Efetivado em menos de 1 ano</span>
-    </article>
     <article class="job">
       <h3>Desenvolvedor RPA Júnior, Sicredi</h3>
       <p class="when">2022 a 2025</p>
       <ul>
         <li>Desenvolvi e mantive automações em UiPath que reduziram aproximadamente <strong>144 horas/mês</strong> de trabalho manual.</li>
         <li>Integrei sistemas internos e externos via APIs, garantindo troca de dados confiável entre automações, bancos de dados e sistemas web.</li>
-        <li>Desenvolvi novas funcionalidades e dei manutenção em aplicações web.</li>
+        <li>Desenvolvi novas funcionalidades e dei manutenção em aplicação web.</li>
         <li>Modelei e consultei bases em SQL/PostgreSQL e MongoDB para suportar automações e relatórios.</li>
         <li>Construí dashboards em Power BI para acompanhar poupanças programadas e os recursos disponíveis e utilizados no plano safra, apoiando decisões da área.</li>
         <li>Atuei com BPMS (SeSuite e Fluid) no mapeamento e automação de fluxos de trabalho.</li>
         <li>Participei de projetos de inovação, incluindo automações com agentes de IA.</li>
       </ul>
+    </article>
+    <article class="job">
+      <h3>Estagiário em Desenvolvimento RPA, Sicredi</h3>
+      <p class="when">2021 a 2022</p>
+      <ul><li>Desenvolvi automações em UiPath e participei de projetos de inovação desde o início do estágio.</li></ul>
+      <span class="badge">Efetivado em menos de 1 ano</span>
     </article>
   </div>
 </section>
@@ -146,8 +145,8 @@ footer p{margin:0 0 24px;max-width:32em;color:var(--mut)}
   <div class="two">
     <div class="card">
       <h3>Bacharelado em Ciência da Computação</h3>
-      <p>Universidade Regional Integrada do Alto Uruguai e das Missões (URI)</p>
-      <p style="color:var(--mut)">Em andamento</p>
+      <p>Estácio (EAD)</p>
+      <p style="color:var(--mut)">Previsão de conclusão: 12/2029</p>
       <h3 style="margin-top:26px">Idiomas</h3>
       <p>Português (nativo)<br>Inglês (avançado)</p>
     </div>
@@ -203,28 +202,23 @@ addEventListener("pointermove",function(e){px=e.clientX;py=e.clientY});
 if(rm){for(var k=0;k<90;k++)draw()}
 else{var last=0;(function loop(t){if(t-last>33){last=t;draw()}requestAnimationFrame(loop)})(0)}
 
-// scroll: barra de progresso + linha do tempo
 var bar=document.getElementById("bar"),tl=document.getElementById("tl"),jobs=[].slice.call(document.querySelectorAll(".job"));
 function sc(){var h=document.documentElement,m=h.scrollHeight-innerHeight;bar.style.transform="scaleX("+(m>0?scrollY/m:0)+")";
  var r=tl.getBoundingClientRect(),p=Math.max(0,Math.min(1,(innerHeight*.65-r.top)/r.height));tl.style.setProperty("--p",(p*100)+"%");
  jobs.forEach(function(j){j.classList.toggle("on",j.getBoundingClientRect().top<innerHeight*.65)})}
 addEventListener("scroll",sc,{passive:true});addEventListener("resize",sc);sc();
 
-// spotlight nos cartões
 [].forEach.call(document.querySelectorAll(".card"),function(c){c.addEventListener("pointermove",function(e){var b=c.getBoundingClientRect();c.style.setProperty("--mx",(e.clientX-b.left)+"px");c.style.setProperty("--my",(e.clientY-b.top)+"px")})});
 
 if(rm)return;
-// nome decodificado + função de digitação
 var nm=document.getElementById("nm"),rl=document.getElementById("rl"),T1=nm.textContent,T2=rl.textContent;
 function dec(el,t,ms){var st=performance.now();(function f(n){var p=Math.min((n-st)/ms,1),k=Math.floor(p*t.length),s="";for(var i=0;i<t.length;i++)s+=t[i]===" "?" ":(i<k?t[i]:S[Math.random()*S.length|0]);el.textContent=p<1?s:t;if(p<1)requestAnimationFrame(f)})(st)}
 function type(el,t,cb){var i=0;el.textContent="";(function s(){el.textContent=t.slice(0,++i);if(i<t.length)setTimeout(s,28);else if(cb)cb()})()}
 dec(nm,T1,1400);rl.textContent="";setTimeout(function(){type(rl,T2)},1500);
 
-// contador
 var n=document.getElementById("n"),t0=null;n.textContent="0";
 (function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/2200,1);n.textContent=Math.round(144*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(performance.now());
 
-// log de execução em loop
 var lg=document.getElementById("log"),L=[].map.call(lg.children,function(e){return e.textContent});
 function run(){lg.innerHTML="";var i=0;(function next(){if(i>=L.length){setTimeout(run,4200);return}
  var d=document.createElement("div");lg.appendChild(d);type(d,L[i++],function(){setTimeout(next,260)})})()}
